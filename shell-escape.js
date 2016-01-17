@@ -2,6 +2,9 @@ module.exports = shellescape;
 
 // return a shell compatible format
 function shellescape(a) {
+  if(typeof a === "string") {
+    return shellescape([a]);
+  }
   var ret = [];
 
   if (process.platform==="win32") {
